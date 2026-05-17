@@ -7,12 +7,14 @@
    rewrites, auth checks, or route filtering. 
    N.B. Next.js middleware cannot be used with `output: "export"` (static HTML export for GitHub Pages). */
 
-
 import { NextResponse } from "next/server";
 
 export function middleware(req: { nextUrl: { pathname: string; }; url: string | URL | undefined; }) {
-  // Example: block access to /blocked and redirect to home
   if (req.nextUrl.pathname === "/blocked") {
     return NextResponse.redirect(new URL("/", req.url));
   }
 }
+
+export const config = {
+  matcher: ['/blocked']
+};
