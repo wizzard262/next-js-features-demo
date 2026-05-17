@@ -1,7 +1,7 @@
 // Static Site Generation (SSG) example.
 // This page is rendered at build time and served as a static HTML file.
 
-import features from "@/lib/features";
+import { features } from "@/lib/features";
 
 export const metadata = { title: "Static Rendering" };
 

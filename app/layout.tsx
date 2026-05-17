@@ -2,9 +2,9 @@
 // This wraps every page and defines global HTML structure, fonts, metadata, and navigation.
 
 import "./globals.css";
-import Nav from "@/components/Nav";
 import { Inter } from "next/font/google";
 import { ReactNode } from "react";
+import Nav from "@/components/Nav";
 
 // Load Google Font (Inter) with automatic optimization
 const inter = Inter({ subsets: ["latin"] });

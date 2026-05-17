@@ -12,13 +12,13 @@ export default async function MiddelwarePage() {
         <h1 className="text-2xl font-bold">Middleware - Route Blocking Example</h1>
         <p className="mt-4">
           This middleware runs before every request and checks the incoming URL. <br />
-          If the user tries to access the "/blocked" route, the middleware
-          intercepts the request and immediately redirects them back to the homepage ("/").
+          If the user tries to access the &quot;/blocked&quot; route, the middleware
+          intercepts the request and immediately redirects them back to the homepage (&quot;/&quot;).
         </p>
         <p className="mt-4">
           <b>How it works:</b>< br />
-          Next.js inspects the request's pathname <br />
-          If pathname === "/blocked", the middleware returns a redirect response <br />
+          Next.js inspects the request pathname <br />
+          If pathname === &quot;/blocked&quot;, the middleware returns a redirect response <br />
           The user never reaches the original page
         </p>
         <p className="mt-4">
@@ -30,7 +30,7 @@ export default async function MiddelwarePage() {
             <li>Handling simple access rules at the edge</li>
           </ul>
         </p>
-        <a href="/blocked" className="text-blue-600 underline mt-4 block">Click this link which attempts to access the blocked route: "/blocked". It will be redirected to Homepage.</a>
+        <a href="/blocked" className="text-blue-600 underline mt-4 block">Click this link which attempts to access the blocked route: &quot;/blocked&quot;. It will be redirected to Homepage.</a>
       </div>
     </div>
   );

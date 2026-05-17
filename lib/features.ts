@@ -1,6 +1,6 @@
 // Simple static list of features used by the SSG page.
 
-export default [
+export const features = [
   "SSR",
   "SSG",
   "ISR",
