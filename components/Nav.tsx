@@ -24,7 +24,7 @@ const linkClass = (path: string) =>
       <Link href="/docs/intro" className={linkClass("/docs/intro")}>Dynamic Route</Link>
       <Link href="/server-actions" className={linkClass("/server-actions")}>Server Actions</Link>
       <Link href="/image-optimization" className={linkClass("/image-optimization")}>Image Optimization</Link>
-      <Link href="/middleware" className={linkClass("/middleware")}>Middleware</Link>
+      <Link href="/middle-ware" className={linkClass("/middle-ware")}>Middleware</Link>
       <Link href="/api/hello" className={linkClass("/api/hello")}>API Route</Link>
     </nav>
   );
