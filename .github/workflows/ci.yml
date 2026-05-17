@@ -1,0 +1,42 @@
+# DISABLED WORKFLOW
+# This workflow is no longer used because the project is now deployed to Azure App Service.
+# It is kept for reference only and will not run.
+
+# Continuous Integration workflow that runs on every push or pull request to main.
+# It installs dependencies, runs ESLint, and builds the project to ensure the codebase is valid, consistent, and production‑ready before merging.
+# This prevents broken builds, failing lint rules, or invalid TypeScript from entering the main branch.
+name: CI
+
+# Run on PRs and pushes to main
+on:
+  pull_request:
+    branches: ["main"]
+  push:
+    branches: ["main"]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Pull the code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Install Node.js
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Run ESLint
+      - name: Lint
+        run: npm run lint
+
+      # Build the project
+      - name: Build
+        run: npm run build

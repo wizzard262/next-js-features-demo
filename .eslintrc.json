@@ -1,0 +1,22 @@
+/* Defines your project’s linting rules.
+  Controls code quality, formatting standards, import order,
+  and ensures consistent coding style across the entire codebase. */
+{
+  // Use Next.js ESLint rules (includes React, Hooks, Accessibility)
+  "extends": ["next/core-web-vitals"],
+
+  // Custom rules for your project
+  "rules": {
+    // Example: allow console.log in server components
+    "no-console": "off",
+
+    // Example: enforce consistent imports
+    "import/order": [
+      "warn",
+      {
+        "groups": ["builtin", "external", "internal"],
+        "alphabetize": { "order": "asc" }
+      }
+    ]
+  }
+}

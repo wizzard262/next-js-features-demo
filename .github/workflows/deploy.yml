@@ -1,0 +1,71 @@
+# DISABLED WORKFLOW
+# This workflow is no longer used because the project is now deployed to Azure App Service.
+# It is kept for reference only and will not run.
+
+# Automated GitHub Pages deployment pipeline.
+# On every push to main, it builds the Next.js project, performs a static export, 
+# uploads the generated out/ folder as an artifact, and deploys it to GitHub Pages.
+# This workflow handles the entire publishing process end‑to‑end, ensuring your site 
+# is always live and up‑to‑date without manual steps.
+name: Deploy Next.js to GitHub Pages
+
+# Trigger on pushes to main or manual run
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+# Required permissions for GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Prevent overlapping deployments
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Pull the repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Install Node.js
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Build Next.js and export static site to /out
+      - name: Build Next.js (static export)
+        run: |
+          npm run build
+          npm run export
+
+      # Upload the /out folder as the artifact for deployment
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      # Deploy the artifact to GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

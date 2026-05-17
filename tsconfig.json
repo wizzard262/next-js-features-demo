@@ -1,0 +1,48 @@
+{
+  // This file configures how TypeScript behaves in your project.
+  // Next.js 14.2.x no longer ships built‑in TS configs, so this is the clean, modern setup.
+  "compilerOptions": {
+    // Enables strict type checking across the project.
+    // This catches bugs early and is recommended for all modern TS apps.
+    "strict": true,
+    // Allows you to import files using "@/something" instead of long relative paths.
+    // Example: import Nav from "@/components/Nav"
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    },
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "incremental": true,
+    "module": "esnext",
+    "esModuleInterop": true,
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  // Tells TypeScript which files to include in the project.
+  // next-env.d.ts is required by Next.js and is auto‑generated.
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  // Excludes node_modules from type checking (massive performance win).
+  "exclude": [
+    "node_modules"
+  ]
+}

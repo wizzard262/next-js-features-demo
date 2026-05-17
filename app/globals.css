@@ -1,0 +1,6 @@
+/* Global styles for the entire app 
+  If referenced this file must not be empty — Next.js treats global CSS as a side‑effect import.
+  If the file is empty, TypeScript may flag the import as unused or invalid. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
