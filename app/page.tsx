@@ -13,7 +13,7 @@ export default function Home() {
         <li>Git repository at: <a href="https://github.com/wizzard262/next-js-features-demo" target="_blank" rel="noopener noreferrer">https://github.com/wizzard262/next-js-features-demo</a></li>
         <li>Build & Deploy from Vercels zero-config CI/CD workflow (no YAML files)</li>
         <li>Hosted on Vercel <a href="https://next-js-features-demo.vercel.app/" target="_blank" rel="noopener noreferrer">https://next-js-features-demo.vercel.app/</a><br/>
-            <i>(Github Pages will only host static content, and Azure is forcing a "Next.js breaking" Node 22 or 24 runtime)</i>
+            <i>(Github Pages will only host static content, and Azure is forcing a &quot;Next.js breaking&quot; Node 22 or 24 runtime)</i>
         </li>
       </ul>
       <p className="mt-6 text-sm">
